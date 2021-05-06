@@ -16,13 +16,5 @@ funtoy.elf: ${COMMON_OBJECTS} main.o stateMachines.o buzzer.o p2_interrupt_handl
 load: funtoy.elf
 	msp430loader.sh $^
 
-main.o: stateMachines.h draw.h main.h
-
-stateMachines.o: stateMachines.h
-
-switches.o: switches.h 
-
-state_advance.o: stateMachines.h
-
 clean:
 	rm -f *.o *~ *.elf
