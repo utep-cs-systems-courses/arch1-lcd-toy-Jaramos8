@@ -78,7 +78,6 @@ void wdt_c_handler()
       substateLed2 = 0;
     }
     and_sr(~0x8);            /* GIE disable interrupts */
-    ambulance_advance(substateLed2);  /* I just don't want this interrupted */
     or_sr(0x8);              /* GIE enable interrupts */
     break;
   }
@@ -116,17 +115,17 @@ void main()
 	  main_menu_advance();
 	}
 	else{                       /* then it draws the main text that flips colors */
-	  drawString8x12(screenWidth/2-36, screenHeight/2-50,"********", fontFgColor, COLOR_BLACK);
-	  drawString5x7(screenWidth/2-48, screenHeight/2-35,"Press S1 to Play", fontFgColor, COLOR_BLACK);
-	  drawString5x7(screenWidth/2-27, screenHeight/2-20,"Press S2", fontFgColor, COLOR_BLACK);
-	  drawString5x7(screenWidth/2-27, screenHeight/2-10,"to reload", fontFgColor, COLOR_BLACK);
+	  drawString8x12(screenWidth/2-36, screenHeight/2-55,"********", fontFgColor, COLOR_BLACK);
+	  drawString5x7(screenWidth/2-48, screenHeight/2-40,"Press S1 to Play", fontFgColor, COLOR_BLACK);
+	  drawString5x7(screenWidth/2-27, screenHeight/2-25,"Press S2", fontFgColor, COLOR_BLACK);
+	  drawString5x7(screenWidth/2-27, screenHeight/2-15,"to reload", fontFgColor, COLOR_BLACK);
 
-	  drawString5x7(screenWidth/2-45, screenHeight/2+5,"Press S3 to Play", fontFgColor, COLOR_BLACK);
-	  drawString5x7(screenWidth/2-30, screenHeight/2+15,"Buzzer", fontFgColor, COLOR_BLACK);
-	  drawString5x7(screenWidth/2-45, screenHeight/2+30,"Press S4 to Play ", fontFgColor, COLOR_BLACK);
-	  drawString5x7(screenWidth/2-32, screenHeight/2+40,"LED", fontFgColor, COLOR_BLACK);
+	  drawString5x7(screenWidth/2-45, screenHeight/2,"Press S3 to Play", fontFgColor, COLOR_BLACK);
+	  drawString5x7(screenWidth/2-30, screenHeight/2+10,"Buzzer", fontFgColor, COLOR_BLACK);
+	  drawString5x7(screenWidth/2-45, screenHeight/2+25,"Press S4 to Play ", fontFgColor, COLOR_BLACK);
+	  drawString5x7(screenWidth/2-32, screenHeight/2+35,"LED", fontFgColor, COLOR_BLACK);
 	  
-	  
+	  draw_shape(screenWidth/2, screenHeight/2+50, fontFgColor, fontFgColor2); 
 
 	}
 	break;
@@ -146,10 +145,10 @@ void main()
 	    secCount = 0;
 	    redrawScreen3 = 0;
 	  }
-	  drawString5x7(screenWidth/2-48, screenHeight/2-25,"Press S2 to move", COLOR_BLACK, COLOR_WHITE);
-	  drawString5x7(screenWidth/2-30, screenHeight/2-15,"to the left", COLOR_BLACK, COLOR_WHITE);
-	  drawString5x7(screenWidth/2-48, screenHeight/2,"Press S3 to move", COLOR_BLACK, COLOR_WHITE);
-	  drawString5x7(screenWidth/2-35, screenHeight/2+10,"to the right", COLOR_BLACK, COLOR_WHITE);
+	  drawString5x7(screenWidth/2-48, screenHeight/2-10,"Press S2 to move", COLOR_BLACK, COLOR_WHITE);
+	  drawString5x7(screenWidth/2-30, screenHeight/2-2,"to the left", COLOR_BLACK, COLOR_WHITE);
+	  drawString5x7(screenWidth/2-48, screenHeight/2+10,"Press S3 to move", COLOR_BLACK, COLOR_WHITE);
+	  drawString5x7(screenWidth/2-35, screenHeight/2+20,"to the right", COLOR_BLACK, COLOR_WHITE);
 	  break;
 	}
 	break;

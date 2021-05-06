@@ -13,7 +13,7 @@ u_char rcolS = screenWidth/2-36;
 int master = 0;                 /* master state set automatically to 0 */
 int substate = 0;               /* substate set automatically to 0 */
 int x = 500;                    /* x set to 0 */
-char *string = "Welcome!";
+char *string = "********";
 int colorState = 0;             /* state of the color */
 int movestate = 0;              /* state of the movement */
 
@@ -50,20 +50,6 @@ void motion_advance()                /* operates the movement of the box */
   }
 }
 
-
-void ambulance_advance(int stateA)      /* extra state machine not being used */
-{
-  switch(stateA){
-  case 0:
-    buzzer_set_period(2000000/2500);    /* set buzzer */
-    red_on_all();                   /* 2 lines set lights */
-    break;
-  case 1:
-    buzzer_set_period(2000000/500);     /* set buzzer */
-    red_off();                     /* set leds */
-    break;
-  }
-}
 
 
 void red_off()                  /* red light off*/

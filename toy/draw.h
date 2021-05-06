@@ -40,5 +40,6 @@ void draw_left();
 /*
   this function draws a small house.
  */
+void draw_shape(u_char offc, u_char offr, u_int color, u_int color2);
 
 #endif // included

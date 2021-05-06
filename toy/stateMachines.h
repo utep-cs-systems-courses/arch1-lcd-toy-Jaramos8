@@ -85,7 +85,4 @@ char green_66();
  */
 char green_25();
 
-/* advances the ambulance state
- */
-void ambulance_advance(int stateA);
 #endif // included

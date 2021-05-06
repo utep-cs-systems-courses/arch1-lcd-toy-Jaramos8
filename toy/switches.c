@@ -45,14 +45,14 @@ switch_interrupt_handler()
       redrawScreen3 = 1;
       buzzer_set_period(0);
     }
-    else if((p2val & SW4) == 0){  /* Load dimming demo */
+    else if((p2val & SW4) == 0){  /* Load LED */
       seconds = 0;                /* next few lines update variables */
       secCount = 0;
       redrawScreen = 0;
       redrawScreen2 = 0;
       master = 2;                 /* updated the master state */
     }
-    else if((p2val & SW3) == 0){  /* load ambulance */
+    else if((p2val & SW3) == 0){  /* load Buzzer */
       seconds = 0;                /* next few lines update variables */
       secCount = 0;
       redrawScreen = 0;
@@ -63,7 +63,7 @@ switch_interrupt_handler()
       master = 0;                 /* next few lines update variables */
       secCount = 0;
       seconds = 0;
-      string = "Welcome!";
+      string = "********";
       redrawScreen = 1;
       redrawScreen3 = 1;
       rcolS = screenWidth/2-36;
@@ -97,7 +97,7 @@ switch_interrupt_handler()
       master = 0;                 /* next few lines update variables */
       secCount = 0;
       seconds = 0;
-      string = "Welcome!";
+      string = "********";
       redrawScreen = 1;
       redrawScreen3 = 1;
       rcolS = screenWidth/2-36;
@@ -109,7 +109,7 @@ switch_interrupt_handler()
       secCount = 0;
       seconds = 8;
       P1OUT &= ~RED_LED;          /* i believe the code breaks if this stays on */
-      string = "Welcome!";
+      string = "********";
       redrawScreen = 0;
       redrawScreen2 = 0;
       rcolS = screenWidth/2-36;
@@ -121,7 +121,7 @@ switch_interrupt_handler()
       secCount = 0;
       seconds = 8;
       P1OUT &= ~RED_LED;          /* i believe the code breaks if this stays on */
-      string = "Welcome!";
+      string = "********";
       redrawScreen = 0;
       redrawScreen2 = 0;
       rcolS = screenWidth/2-36;

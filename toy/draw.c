@@ -48,19 +48,30 @@ void drawString8x12(u_char col, u_char row, char *string,
     cols += 9;
   }
 }
+/* Draws Shape: Diamond on top of Triangle */
 
-void drawDiamond(u_char offc, u_char offr, u_int color)
+void draw_shape(u_char offc, u_char offr, u_int color, u_int color2) 
 {
-  for(u_char r = 0; r < 10; r++){
+  /* Diamond */
+  for(u_char r = 0; r < 10; r++){       
     for(u_char c = 0; c <= r; c++){            
       drawPixel(offc-c, offr+r, color);
       drawPixel(offc+c, offr+r, color);
-      drawPixel(offc-c, offr+19-r, color);  /* this also makes a diamond */
+      drawPixel(offc-c, offr+19-r, color);  
       drawPixel(offc+c, offr+19-r, color);
     }
   }
-}
+ 
+   /* Tiangle */
   
+  for(u_char r = 0; r < 10; r++){                              
+    for(u_char c = 0; c <= r; c++){
+      drawPixel(offc-c, offr+r+19, color);
+      drawPixel(offc+c, offr+r+19, color);
+    }
+  }
+}
+
 void draw_right()
 {
   if(y < 0){                             /* checks if y is out of bounds*/
