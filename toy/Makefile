@@ -10,7 +10,7 @@ AS              = msp430-elf-gcc -mmcu=${CPU} -c
 all:funtoy.elf
 
 #additional rules for files
-funtoy.elf: ${COMMON_OBJECTS} main.o stateMachines.o buzzer.o p2_interrupt_handler.o switches.o draw.o wdt_handler.o
+funtoy.elf: ${COMMON_OBJECTS} main.o stateMachines.o state_advance.o buzzer.o p2_interrupt_handler.o switches.o draw.o wdt_handler.o
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lTimer -lLcd 
 
 load: funtoy.elf

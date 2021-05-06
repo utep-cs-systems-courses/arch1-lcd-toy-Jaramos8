@@ -7,6 +7,7 @@ jt:
 	.word case2
 	.word case3
 	.word case4
+	.word done
 
 	.extern red_on_all
 	.extern red_66

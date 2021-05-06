@@ -248,27 +248,27 @@ char green_25()		/* 25% brightness green */
 
 char state_advance(char substateLed);              /* function written in assembly in state_advance.s */
 
-
-char state_advance(char substateLed)   		   /* switch between different dimming modes*/
+/*
+char state_advance(char substateLed)   		   /* switch between different dimming modes
 {
   char led_changed = 0;
   switch(substateLed){
   case 0:
-  led_changed = red_on_all();    /* 100% brightness red*/ 
+  led_changed = red_on_all();    /* 100% brightness red
     break;
   case 1:
-  led_changed = red_66();        /* 66% brightness red */
+  led_changed = red_66();        /* 66% brightness red 
     break;
   case 2:
-  led_changed = toggle_red();    /* 50% brightness red */
+  led_changed = toggle_red();    /* 50% brightness red 
     break;
   case 3:
-  led_changed = red_33();        /* 33% brightness red */
+  led_changed = red_33();        /* 33% brightness red 
     break;
   case 4:
-  led_changed = red_25();        /* 25% brightness red */ 
+  led_changed = red_25();        /* 25% brightness red  
     break;
   }
   return led_changed;
 }
-
+*/
